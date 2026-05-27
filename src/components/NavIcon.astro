@@ -1,0 +1,26 @@
+---
+import { Icon } from "astro-icon/components";
+import "../styles/global.css";
+
+interface Props {
+  name: string;
+  href: string;
+}
+
+const { name, href } = Astro.props;
+---
+
+<a href={href} class="nav-icon">
+  <Icon name={name} class="w-9 h-9" />
+</a>
+
+<style>
+  .nav-icon {
+    color: var(--mj-darkblue);
+    transition: color 0.2s ease;
+  }
+
+  .nav-icon:hover {
+    color: var(--mj-skyblue);
+  }
+</style>

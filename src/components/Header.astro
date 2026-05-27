@@ -1,0 +1,19 @@
+---
+import "../styles/global.css";
+import NavIcon from "./NavIcon.astro";
+---
+
+<header class="fixed top-0 left-0 h-screen border-r border-gray-200">
+  <nav
+    class="flex flex-col items-center justify-between h-full py-6 px-3 min-w-18"
+  >
+    <img class="w-16 h-27" src="../../mj-logo.svg" alt="Logo Manuel Jordan" />
+    <ul class="flex flex-col gap-7 list-none p-2.5">
+      <li><NavIcon href="/" name="mdi:home" /></li>
+      <li><NavIcon href="/habilidades" name="mdi:lightning-bolt" /></li>
+      <li><NavIcon href="/proyectos" name="mdi:toolbox" /></li>
+      <li><NavIcon href="/educacion" name="mdi:diploma" /></li>
+      <li><NavIcon href="/contacto" name="mdi:email" /></li>
+    </ul>
+  </nav>
+</header>
