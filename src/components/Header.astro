@@ -3,17 +3,35 @@ import "../styles/global.css";
 import NavIcon from "./NavIcon.astro";
 ---
 
-<header class="fixed top-0 left-0 h-screen border-r border-gray-200">
-  <nav
-    class="flex flex-col items-center justify-between h-full py-6 px-3 min-w-18"
-  >
-    <img class="w-16 h-27" src="../../mj-logo.svg" alt="Logo Manuel Jordan" />
-    <ul class="flex flex-col gap-7 list-none p-2.5">
-      <li><NavIcon href="/" name="mdi:home" /></li>
-      <li><NavIcon href="/habilidades" name="mdi:lightning-bolt" /></li>
-      <li><NavIcon href="/proyectos" name="mdi:toolbox" /></li>
-      <li><NavIcon href="/educacion" name="mdi:diploma" /></li>
-      <li><NavIcon href="/contacto" name="mdi:email" /></li>
+<header class="fixed top-0 left-0 w-full flex justify-around py-7.5 px-5">
+  <nav class="p-3 rounded-4xl">
+    <ul class="relative flex justify-center items-center gap-4.5 py-1.5 px-4">
+      <li><NavIcon href="/" name="Inicio" /></li>
+      <li><NavIcon href="/sobre-mi" name="Sobre Mi" /></li>
+      <li><NavIcon href="/habilidades" name="Habilidades" /></li>
+      <li><NavIcon href="/proyectos" name="Proyectos" /></li>
+      <li><NavIcon href="/educacion" name="Certificados" /></li>
+      <li><NavIcon href="/contacto" name="Contacto" /></li>
     </ul>
   </nav>
 </header>
+
+<style>
+  header {
+    transition:
+      background 0.3s ease,
+      padding 0.3s ease;
+  }
+  header.down {
+    background: var(--white);
+    padding: 15px 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.8);
+  }
+</style>
+
+<script type="text/javascript">
+  window.addEventListener("scroll", () => {
+    let header = document.querySelector("header");
+    header.classList.toggle("down", window.scrollY > 0);
+  });
+</script>

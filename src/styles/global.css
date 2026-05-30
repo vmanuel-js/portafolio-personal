@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+header {
+  z-index: 50;
+}
+
 :root {
   --black: #0d0d0d;
   --skyblue1: #0a7fd4;
@@ -8,4 +12,5 @@
   --gray: #ededed;
   --bluelight: #00509d;
   --darkblue2: #111827;
+  --white: #fff;
 }
