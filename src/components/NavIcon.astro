@@ -7,30 +7,24 @@ interface Props {
 }
 
 const { name, href } = Astro.props;
-const isActive = Astro.url.pathname === href;
 ---
 
-<a
-  href={href}
-  class:list={[
-    "nav-text py-2 px-3 rounded-4xl font-medium",
-    { "nav-active": isActive },
-  ]}
->
+<a href={href} class="nav-link py-2 px-3 rounded-4xl font-medium" ,>
   {name}
 </a>
 
 <style>
-  .nav-text {
+  .nav-link {
     color: var(--darkblue2);
+    transition: color 0.2s;
   }
 
-  .nav-text:hover {
+  .nav-link:hover {
     color: var(--bluelight);
   }
 
-  .nav-active {
+  :global(.nav-link.active) {
     background-color: var(--bluelight);
-    color: var(--gray);
+    color: var(--white) !important;
   }
 </style>

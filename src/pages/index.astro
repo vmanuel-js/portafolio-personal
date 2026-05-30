@@ -1,12 +1,36 @@
 ---
 import Header from "../components/Header.astro";
 import Inicio from "../components/Inicio.astro";
+import SobreMi from "../components/SobreMi.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
   <Header />
-  <main>
+  <main style="position: relative; z-index: 1;">
     <Inicio />
+    <SobreMi />
   </main>
 </Layout>
+
+<script>
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("a.nav-link");
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        if (entry.isIntersecting) {
+          navLinks.forEach((link) => link.classList.remove("active"));
+          document
+            .querySelector(`a.nav-link[href="#${entry.target.id}"]`)
+            ?.classList.add("active");
+        }
+      }
+    },
+    { threshold: 0, rootMargin: "-40% 0px -40% 0px" },
+  );
+
+  sections.forEach((s) => observer.observe(s));
+  document.querySelector('a.nav-link[href="#inicio"]')?.classList.add("active");
+</script>

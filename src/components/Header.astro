@@ -14,7 +14,7 @@ import NavIcon from "./NavIcon.astro";
 
   <nav class="hidden md:block p-3 rounded-4xl">
     <ul class="relative flex justify-center items-center gap-4.5 py-1.5 px-4">
-      <li><NavIcon href="#" name="Inicio" /></li>
+      <li><NavIcon href="#inicio" name="Inicio" /></li>
       <li><NavIcon href="#sobre-mi" name="Sobre Mi" /></li>
       <li><NavIcon href="#habilidades" name="Habilidades" /></li>
       <li><NavIcon href="#proyectos" name="Proyectos" /></li>
@@ -42,7 +42,7 @@ import NavIcon from "./NavIcon.astro";
   <button id="close-btn" class="absolute top-6 right-6" aria-label="Cerrar menú"
     >X</button
   >
-  <NavIcon href="#" name="Inicio" />
+  <NavIcon href="#inicio" name="Inicio" />
   <NavIcon href="#sobre-mi" name="Sobre Mi" />
   <NavIcon href="#habilidades" name="Habilidades" />
   <NavIcon href="#proyectos" name="Proyectos" />
@@ -77,4 +77,10 @@ import NavIcon from "./NavIcon.astro";
   document.getElementById("close-btn").addEventListener("click", () => {
     menu.classList.add("translate-x-full");
   });
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll("a.nav-link");
+
+  sections.forEach((s) => observer.observe(s));
+  document.querySelector('a.nav-link[href="#inicio"]')?.classList.add("active");
 </script>
