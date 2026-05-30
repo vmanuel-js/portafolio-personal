@@ -1,7 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --mj-cream: #fffaec;
-  --mj-skyblue: #9cb4d0;
-  --mj-darkblue: #1a1c2b;
+  --black: #0d0d0d;
+  --skyblue1: #0a7fd4;
+  --skyblue2: #3b82f6;
+  --darkblue1: #1a1f2e;
+  --gray: #ededed;
+  --bluelight: #00509d;
+  --darkblue2: #111827;
 }
