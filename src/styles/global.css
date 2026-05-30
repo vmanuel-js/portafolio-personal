@@ -13,4 +13,37 @@ header {
   --bluelight: #00509d;
   --darkblue2: #111827;
   --white: #fff;
+  --graydark: #f2f4f6;
+
+  --h1: 42px;
+  --h2: 36px;
+  --h3: 28px;
+  --h4: 24px;
+  --h5: 20px;
+  --parrafo: 17px;
+  --little: 15px;
+}
+
+@media (max-width: 1024px) {
+  :root {
+    --h1: 34px;
+    --h2: 28px;
+    --h3: 22px;
+    --h4: 20px;
+    --h5: 18px;
+    --parrafo: 16px;
+    --little: 14px;
+  }
+}
+
+@media (max-width: 640px) {
+  :root {
+    --h1: 28px;
+    --h2: 22px;
+    --h3: 18px;
+    --h4: 17px;
+    --h5: 16px;
+    --parrafo: 15px;
+    --little: 13px;
+  }
 }

@@ -1,0 +1,92 @@
+---
+import "../styles/global.css";
+import "../components/MiniSpan.astro";
+import MiniSpan from "../components/MiniSpan.astro";
+import LinkIcon from "../components/LinkIcon.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<section
+  class="flex flex-col md:flex-row items-center md:items-start justify-center gap-10 pt-16 md:pt-40 px-6 min-h-screen max-w-5xl mx-auto"
+>
+  <div class="flex flex-col items-center gap-4">
+    <div class="w-48 h-64 md:w-64 md:h-80 bg-gray-200">
+      <img
+        class="w-full h-full object-cover"
+        src="/mj-logo.svg"
+        alt="Manuel Jordan"
+      />
+    </div>
+    <div class="flex flex-row gap-6">
+      <p class="py-1.5 px-4.5 language-chip">Español</p>
+      <p class="py-1.5 px-4.5 language-chip">Inglés</p>
+    </div>
+  </div>
+  <div class="flex flex-col gap-12 my-4 text-center md:text-left">
+    <div class="flex flex-col gap-4 items-center md:items-start">
+      <MiniSpan name="Desarrollador FullStack" />
+      <div class="mt-4">
+        <h5>¡Hola!, soy</h5>
+        <h1 class="font-bold">Manuel Jordan</h1>
+      </div>
+      <p>
+        Disfruto participar en el proceso de <span class="font-medium"
+          >desarrollo</span
+        > de proyectos, transformando ideas en soluciones <span
+          class="font-medium">bien estructuradas</span
+        > y orientadas a cumplir <span class="font-medium"
+          >objetivos concretos</span
+        >.
+      </p>
+    </div>
+    <div
+      class="flex flex-row flex-wrap justify-center md:justify-start gap-4 md:gap-10"
+    >
+      <button class="flex flex-row font-medium items-center gap-2.5 py-3 px-4.5"
+        >Descargar CV <Icon name="mdi:download" size={20} />
+      </button>
+      <LinkIcon
+        name="LinkedIn"
+        icon="mdi:linkedin"
+        href="https://www.linkedin.com/in/victor-manuel-jordan-solis-582977328/"
+      />
+      <LinkIcon
+        name="GitHub"
+        icon="mdi:github"
+        href="https://github.com/vmanuel-js"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  h5 {
+    font-size: var(--h5);
+  }
+
+  h1 {
+    font-size: var(--h1);
+    color: var(--bluelight);
+  }
+
+  span {
+    color: var(--bluelight);
+  }
+
+  p {
+    font-size: var(--parrafo);
+  }
+
+  button {
+    color: var(--gray);
+    background-color: var(--darkblue2);
+    border-radius: 30px;
+    font-size: var(--little);
+  }
+
+  .language-chip {
+    background-color: var(--darkblue2);
+    border-radius: 30px;
+    color: var(--gray);
+  }
+</style>

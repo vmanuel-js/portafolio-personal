@@ -3,8 +3,12 @@ import "../styles/global.css";
 import NavIcon from "./NavIcon.astro";
 ---
 
-<header class="fixed top-0 left-0 w-full flex justify-around py-7.5 px-5">
-  <nav class="p-3 rounded-4xl">
+<header
+  class="fixed top-0 left-0 w-full flex justify-between items-center py-4 px-6 md:justify-around md:py-7.5 md:px-5"
+>
+  <img class="md:hidden w-15 h-15" src="/mj-logo.svg" alt="Logo Manuel Jordan" />
+
+  <nav class="hidden md:block p-3 rounded-4xl">
     <ul class="relative flex justify-center items-center gap-4.5 py-1.5 px-4">
       <li><NavIcon href="/" name="Inicio" /></li>
       <li><NavIcon href="/sobre-mi" name="Sobre Mi" /></li>
@@ -14,7 +18,33 @@ import NavIcon from "./NavIcon.astro";
       <li><NavIcon href="/contacto" name="Contacto" /></li>
     </ul>
   </nav>
+
+  <button
+    id="menu-btn"
+    class="md:hidden flex flex-col gap-1.5 p-2"
+    aria-label="Abrir menú"
+  >
+    <span class="block w-6 h-0.5" style="background: var(--darkblue2);"></span>
+    <span class="block w-6 h-0.5" style="background: var(--darkblue2);"></span>
+    <span class="block w-6 h-0.5" style="background: var(--darkblue2);"></span>
+  </button>
 </header>
+
+<div
+  id="mobile-menu"
+  class="fixed top-0 left-0 w-full h-screen z-50 flex flex-col items-center justify-center gap-8 translate-x-full transition-transform duration-300"
+  style="background: var(--gray);"
+>
+  <button id="close-btn" class="absolute top-6 right-6" aria-label="Cerrar menú"
+    >X</button
+  >
+  <NavIcon href="/" name="Inicio" />
+  <NavIcon href="/sobre-mi" name="Sobre Mi" />
+  <NavIcon href="/habilidades" name="Habilidades" />
+  <NavIcon href="/proyectos" name="Proyectos" />
+  <NavIcon href="/educacion" name="Certificados" />
+  <NavIcon href="/contacto" name="Contacto" />
+</div>
 
 <style>
   header {
@@ -31,7 +61,16 @@ import NavIcon from "./NavIcon.astro";
 
 <script type="text/javascript">
   window.addEventListener("scroll", () => {
-    let header = document.querySelector("header");
-    header.classList.toggle("down", window.scrollY > 0);
+    document
+      .querySelector("header")
+      .classList.toggle("down", window.scrollY > 0);
+  });
+
+  const menu = document.getElementById("mobile-menu");
+  document.getElementById("menu-btn").addEventListener("click", () => {
+    menu.classList.remove("translate-x-full");
+  });
+  document.getElementById("close-btn").addEventListener("click", () => {
+    menu.classList.add("translate-x-full");
   });
 </script>

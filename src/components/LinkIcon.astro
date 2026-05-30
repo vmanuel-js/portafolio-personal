@@ -1,0 +1,33 @@
+---
+import { Icon } from "astro-icon/components";
+import "../styles/global.css";
+import "@iconify-json/mdi";
+
+interface Props {
+  href: string;
+  name: string;
+  icon: string;
+}
+
+const { href, name, icon } = Astro.props;
+const isActive = Astro.url.pathname === href;
+---
+
+<a
+  href={href}
+  target="_blank"
+  class:list={[
+    "flex flex-row gap-2.5 items-center py-1.5 px-3.5 font-medium border-gray-700 nav-link ",
+    { active: isActive },
+  ]}
+>
+  <Icon name={icon} size={40} />
+  <span>{name}</span>
+</a>
+
+<style>
+  .nav-link {
+    border-radius: 12px;
+    font-size: var(--little);
+  }
+</style>

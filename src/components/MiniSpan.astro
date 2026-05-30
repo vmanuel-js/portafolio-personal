@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+
+interface Props {
+  name: string;
+}
+
+const { name } = Astro.props;
+---
+
+<span class="font-medium span-custom py-1.5 px-3 w-max">
+  {name}
+</span>
+
+<style>
+  .span-custom {
+    color: var(--skyblue2);
+    border: 1.5px solid var(--skyblue2);
+    border-radius: 50px;
+    font-size: var(--little);
+  }
+</style>
