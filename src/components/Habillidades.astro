@@ -1,0 +1,81 @@
+---
+import "../styles/global.css";
+import MiniSpan from "./MiniSpan.astro";
+import SkillGroup from "./SkillGroup.astro";
+import SkillCard from "./SkillCard.astro";
+---
+
+<section
+  id="habilidades"
+  class="min-h-screen max-w-5xl mx-auto px-6 pt-28 md:pt-40"
+>
+  <div class="flex flex-col items-center gap-10">
+    <MiniSpan name="HABILIDADES" />
+    <div class="flex flex-col md:flex-row gap-10 md:gap-16 w-full">
+      <div class="flex flex-col gap-6 flex-1">
+        <h3 class="font-medium tracking-widest">BLANDAS</h3>
+        <p>
+          Mi enfoque se basa en el aprendizaje continuo, la organización y la
+          resolución de problemas. Disfruto colaborar, adaptarme a nuevos
+          desafíos y participar activamente en cada etapa del desarrollo para
+          contribuir al éxito de los proyectos.
+        </p>
+      </div>
+      <div class="flex flex-col gap-6 flex-1">
+        <h3 class="font-medium tracking-widest">TÉCNICAS</h3>
+        <div class="skills-container">
+          <SkillGroup name="Frontend" open>
+            <SkillCard name="HTML" icon="html.svg" />
+            <SkillCard name="CSS" icon="css.svg" />
+            <SkillCard name="JavaScript" icon="javascript.svg" />
+            <SkillCard name="React" icon="react.png" />
+            <SkillCard name="Angular" icon="angular.webp" />
+            <SkillCard name="Tailwind" icon="tailwind.png" />
+            <SkillCard name="Bootstrap" icon="bootstrap.png" />
+          </SkillGroup>
+          <SkillGroup name="Backend">
+            <SkillCard name="MySQL" icon="mysql.jpg" />
+            <SkillCard name="Java" icon="java.svg" />
+            <SkillCard name="Node.js" icon="nodejs.svg" />
+            <SkillCard name="PHP" icon="php.png" />
+            <SkillCard name="MongoDB" icon="mongo.png" />
+            <SkillCard name="PostgreSQL" icon="postgres.png" />
+            <SkillCard name="Redis" icon="redis.svg" />
+          </SkillGroup>
+          <SkillGroup name="App Moviles">
+            <SkillCard name="Kotlin" icon="kotlin.svg" />
+            <SkillCard name="Swift UI" icon="swift.png" />
+          </SkillGroup>
+          <SkillGroup name="Herramientas">
+            <SkillCard name="Docker" icon="docker.webp" />
+            <SkillCard name="Figma" icon="figma.png" />
+            <SkillCard name="Git" icon="git.png" />
+            <SkillCard name="n8n" icon="n8n.webp" />
+          </SkillGroup>
+          <SkillGroup name="Aprendiendo">
+            <SkillCard name="C#" icon="c++.svg" />
+            <SkillCard name="Python" icon="python.svg" />
+          </SkillGroup>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  h3 {
+    color: var(--bluelight);
+    font-size: var(--h3);
+  }
+
+  p {
+    font-size: var(--parrafo);
+    line-height: 1.7;
+  }
+
+  .skills-container {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+</style>

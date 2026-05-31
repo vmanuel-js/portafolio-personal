@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  icon: string;
+}
+
+const { name, icon } = Astro.props;
+---
+
+<div class="skill-card flex flex-col items-center gap-2 p-2 md:p-3">
+  <span class="language font-medium py-1 px-2 md:py-1.5 md:px-2.5">{name}</span>
+  <img
+    class="w-8 h-8 md:w-10 md:h-10 object-contain"
+    src={`/${icon}`}
+    alt={name}
+  />
+</div>
+
+<style>
+  .skill-card {
+    border-radius: 8px;
+  }
+
+  .skill-card span {
+    font-size: var(--little);
+    color: var(--gray);
+    background-color: var(--darkblue1);
+    border-radius: 20px;
+  }
+</style>

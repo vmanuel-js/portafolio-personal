@@ -1,0 +1,28 @@
+---
+interface Props {
+  name: string;
+  open?: boolean;
+}
+
+const { name, open = false } = Astro.props;
+---
+
+<details open={open}>
+  <summary class="py-3 px-4 cursor-pointer">{name}</summary>
+  <div class="grid grid-cols-3 md:grid-cols-4 gap-3 m-3 md:m-5">
+    <slot />
+  </div>
+</details>
+
+<style>
+  summary {
+    list-style: none;
+    font-size: var(--h5);
+    color: var(--darkblue2);
+    border-bottom: 1px solid #ddd;
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+</style>
